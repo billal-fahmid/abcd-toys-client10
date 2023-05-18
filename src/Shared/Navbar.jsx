@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+
+    const { user } = useContext(AuthContext)
+    console.log(user)
+
     const navItems = <>
-    <Link to='/' className='px-3 text-base font-semibold'>Home</Link>
-    <Link to='/allToys' className='px-3 text-base font-semibold'>All Toys</Link>
-    <Link to='/blogs' className='px-3 text-base font-semibold'>Blogs</Link>
-    <Link to='/myToys' className='px-3 text-base font-semibold'>My Toys</Link>
-    <Link to='/addToy' className='px-3 text-base font-semibold'>Add Toy</Link>
-    <Link to='/login' className='px-3 text-base font-semibold'>Login</Link>
+        <Link to='/' className='px-3 text-base font-semibold'>Home</Link>
+        <Link to='/allToys' className='px-3 text-base font-semibold'>All Toys</Link>
+        <Link to='/blogs' className='px-3 text-base font-semibold'>Blogs</Link>
+        {user && <>
+            <Link to='/myToys' className='px-3 text-base font-semibold'>My Toys</Link>
+            <Link to='/addToy' className='px-3 text-base font-semibold'>Add Toy</Link>
+        </>}
+
     </>
     return (
-        <div>
+        <div className='px-14'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -54,7 +61,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Get started</a>
+                    {user ? <button className='text-base font-semibold'> Logout</button> : <Link to='/login' className='px-3 text-base font-semibold'>Login</Link>}
                 </div>
             </div>
         </div>
