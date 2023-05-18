@@ -9,7 +9,7 @@ const AllToys = () => {
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
-    console.log(toys)
+    // console.log(toys)
     return (
         <div className='pb-24 pt-20 px-14'>
             <div className='text-center'>
