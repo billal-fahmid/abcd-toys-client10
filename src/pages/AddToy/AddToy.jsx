@@ -30,7 +30,7 @@ const AddToy = () => {
         <div className='w-full p-16 bg-pink-200'>
             <ToastContainer />
             <div className='text-center'>
-                <h3 className='text-3xl font-bold pb-4'>Add Toy</h3>
+                <h3 className='text-3xl font-bold pb-4'>Add New Toy</h3>
 
             </div>
 
@@ -76,9 +76,9 @@ const AddToy = () => {
                 </div>
                 <div className='mb-2'>
                     <select placeholder='Sub Category' className="block w-full px-4 py-2 mt-2 text-pink-700 bg-white border rounded-md focus:border-pink-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40" {...register("subCategory")}>
-                        <option value="female">Math Toys</option>
-                        <option value="male">Engineering Toys</option>
-                        <option value="other">Physicis Toys</option>
+                        <option value="mathToys">Math Toys</option>
+                        <option value="engineeringToys">Engineering Toys</option>
+                        <option value="physicsToys">Physics Toys</option>
                     </select>
                 </div>
                 <div className="mb-2">
@@ -118,7 +118,9 @@ const AddToy = () => {
                     />
                 </div>
 
-                <input type="submit" />
+                {/* <input  type="submit "   /> */}
+                <button type='submit' className='btn btn-block bg-pink-700 border-none hover:bg-pink-800'> Add New</button>
+
             </form>
             {/* <form onSubmit={handleSubmit(onSubmit)}>
                 <Controller
