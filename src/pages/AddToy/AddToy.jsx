@@ -27,7 +27,7 @@ const AddToy = () => {
     };
 
     return (
-        <div className='w-full p-16 bg-pink-200'>
+        <div className='w-full p-16 bg-pink-100'>
             <ToastContainer />
             <div className='text-center'>
                 <h3 className='text-3xl font-bold pb-4'>Add New Toy</h3>
