@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import SocialLogin from '../../Shared/SocialLogin';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
@@ -21,6 +22,15 @@ const Register = () => {
             const loggedUser = result.user;
             console.log(loggedUser)
             form.reset()
+            updateProfile(loggedUser, {
+                displayName: name, photoURL: photoURL
+              }).then(() => {
+                // Profile updated!
+                // ...
+              }).catch((error) => {
+                // An error occurred
+                // ...
+              });
         })
         .catch(err =>{
             console.log(err)

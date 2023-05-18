@@ -1,11 +1,24 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+
 
 const Navbar = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     console.log(user)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(res => {
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
     const navItems = <>
         <Link to='/' className='px-3 text-base font-semibold'>Home</Link>
@@ -61,7 +74,18 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    {user ? <button className='text-base font-semibold'> Logout</button> : <Link to='/login' className='px-3 text-base font-semibold'>Login</Link>}
+                    {user ? <>
+                        <button onClick={handleLogOut} className='text-base font-semibold'> Logout</button>
+                        {user.photoURL ?
+                            <div className=" ml-4 rounded-full">
+                                <img id='app-title' className="w-14 h-14 rounded-full" src={user.photoURL} />
+                            </div> : ""}
+                    </> : <Link to='/login' className='px-3 text-base font-semibold'>Login</Link>}
+                    <ReactTooltip
+                        anchorId="app-title"
+                        place="bottom"
+                        content={user?.displayName}
+                    />
                 </div>
             </div>
         </div>
