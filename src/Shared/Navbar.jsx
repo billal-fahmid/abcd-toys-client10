@@ -5,9 +5,10 @@ const Navbar = () => {
     const navItems = <>
     <Link to='/' className='px-3 text-base font-semibold'>Home</Link>
     <Link to='/allToys' className='px-3 text-base font-semibold'>All Toys</Link>
+    <Link to='/blogs' className='px-3 text-base font-semibold'>Blogs</Link>
     <Link to='/myToys' className='px-3 text-base font-semibold'>My Toys</Link>
     <Link to='/addToy' className='px-3 text-base font-semibold'>Add Toy</Link>
-    <Link to='/blogs' className='px-3 text-base font-semibold'>Blogs</Link>
+    <Link to='/login' className='px-3 text-base font-semibold'>Login</Link>
     </>
     return (
         <div>
@@ -33,7 +34,7 @@ const Navbar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <img className='h-14' src='https://i.ibb.co/gM1DMCv/cubes.png' alt="" /> <h2 className='text-2xl font-bold md:ml-3 font-mono'>ABCD-TOYS</h2>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
