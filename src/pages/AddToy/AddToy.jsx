@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddToy = () => {
     const { user } = useContext(AuthContext)
@@ -8,25 +10,28 @@ const AddToy = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch(`http://localhost:5000/addToy` , {
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch(`http://localhost:5000/addToy`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(data)
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if(data.acknowledged){
+                    toast("Toy Added Successfully")
+                }
             })
     };
 
     return (
         <div className='w-full p-16 bg-pink-200'>
-
+            <ToastContainer />
             <div className='text-center'>
                 <h3 className='text-3xl font-bold pb-4'>Add Toy</h3>
-               
+
             </div>
 
             <form className='w-3/4 mx-auto' onSubmit={handleSubmit(onSubmit)}>
