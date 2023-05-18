@@ -8,7 +8,13 @@ const AddToy = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('')
+        fetch(`http://localhost:5000/addToy` , {
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
