@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateToy = () => {
     const toyData = useLoaderData()
@@ -9,11 +11,26 @@ const UpdateToy = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
+        fetch(`http://localhost:5000/update/${toyData?._id}` ,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+            if(data.modifiedCount > 0){
+                toast("Update Toy Info Successfully")
+            }
+        })
       
     };
 
     return (
         <div className='w-full p-16 bg-pink-100'>
+            <ToastContainer />
              <div className='text-center'>
                 <h3 className='text-3xl font-bold pb-4'>Update Toy Info</h3>
 
