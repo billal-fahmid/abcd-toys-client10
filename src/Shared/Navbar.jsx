@@ -74,6 +74,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
+                    {console.log(user?.displayName)}
                     {user ? <>
                         <button onClick={handleLogOut} className='text-base font-semibold'> Logout</button>
                         {user.photoURL ?
@@ -81,6 +82,7 @@ const Navbar = () => {
                                 <img id='app-title' className="w-14 h-14 rounded-full" src={user.photoURL} />
                             </div> : ""}
                     </> : <Link to='/login' className='px-3 text-base font-semibold'>Login</Link>}
+                    
                     <ReactTooltip
                         anchorId="app-title"
                         place="bottom"
