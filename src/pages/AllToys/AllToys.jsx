@@ -25,7 +25,7 @@ const AllToys = () => {
     }
     // console.log(toys)
     return (
-        <div className='pb-24 pt-20 px-14'>
+        <div className='pb-24 pt-16 px-14'>
             <div className='text-center'>
                 <h3 className='text-3xl font-bold pb-4'>Explore All Toys</h3>
                 <p className=' font-bold pb-8'> Discover our Toy Wonderland</p>
