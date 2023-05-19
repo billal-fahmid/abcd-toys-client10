@@ -9,11 +9,14 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
 import ToyDetails from "../pages/toyDetails/toyDetails";
+import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
@@ -25,11 +28,11 @@ const router = createBrowserRouter([
         },
         {
             path:'myToys',
-            element:<MyToys></MyToys>
+            element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
         },
         {
             path:'addToy',
-            element:<AddToy></AddToy>
+            element:<PrivateRoute><AddToy></AddToy></PrivateRoute>
         },
         {
             path:'blogs',
@@ -46,12 +49,12 @@ const router = createBrowserRouter([
         {
             path:'updateToy/:id',
             loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`),
-            element:<UpdateToy></UpdateToy>
+            element:<PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>
         },
         {
             path:'details/:id',
             loader:({params})=>fetch(`http://localhost:5000/details/${params.id}`),
-            element:<ToyDetails></ToyDetails>
+            element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
         }
       ]
     },

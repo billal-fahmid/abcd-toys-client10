@@ -1,40 +1,45 @@
 import React, { useContext } from 'react';
 import SocialLogin from '../../Shared/SocialLogin';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
 
-    const handleSignIn=(e) =>{
+    const handleSignIn = (e) => {
         e.preventDefault()
-        
-        const form= e.target;
+
+        const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const photoURL = form.photoURL.value;
         const password = form.password.value;
-        console.log(name , email , photoURL , password)
+        console.log(name, email, photoURL, password)
 
-        createUser(email,password)
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            form.reset()
-            updateProfile(loggedUser, {
-                displayName: name, photoURL: photoURL
-              }).then(() => {
-                // Profile updated!
-                // ...
-              }).catch((error) => {
-                // An error occurred
-                // ...
-              });
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+        createUser(email, password)
+    
+
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                form.reset()
+
+                updateProfile(loggedUser, {
+                    displayName: name, photoURL: photoURL
+                }).then(() => {
+                
+                    // Profile updated!
+                    // ...
+                }).catch((error) => {
+                    // An error occurred
+                    // ...
+                });
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     return (
         <div>
@@ -109,11 +114,11 @@ const Register = () => {
                                     />
                                 </div>
                             </div>
-                           
-                         
+
+
                             <div className="flex items-center mt-4">
                                 <input type="submit" value="Register" className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-pink-700 rounded-md hover:bg-pink-600 focus:outline-none focus:bg-pink-600" />
-                             
+
                             </div>
                         </form>
                         <div className="mt-4 text-grey-600">
@@ -124,8 +129,8 @@ const Register = () => {
                                 </Link>
                             </span>
                         </div>
-                       <SocialLogin></SocialLogin>
-                        
+                        <SocialLogin></SocialLogin>
+
                     </div>
                 </div>
             </div>

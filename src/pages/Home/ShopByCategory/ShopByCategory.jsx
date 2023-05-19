@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { Link } from 'react-router-dom';
 
 const ShopByCategory = () => {
 
@@ -51,8 +52,7 @@ const ShopByCategory = () => {
                                             <p className='flex text-xl items-center pt-2'>Rating : {toy?.rating} <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={toy?.rating} readOnly /></span></p>
 
                                             <div className="card-actions justify-end">
-                                                <div className="badge badge-outline">Fashion</div>
-                                                <div className="badge badge-outline">Products</div>
+                                                <Link to={`/details/${toy?._id}`} className="badge badge-outline ">Details Now</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -76,8 +76,7 @@ const ShopByCategory = () => {
                                             <p className='flex text-xl items-center pt-2'>Rating : {toy?.rating} <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={toy?.rating} readOnly /></span></p>
 
                                             <div className="card-actions justify-end">
-                                                <div className="badge badge-outline">Fashion</div>
-                                                <div className="badge badge-outline">Products</div>
+                                                <Link to={`/details/${toy?._id}`} className="badge badge-outline ">Details Now</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -101,8 +100,8 @@ const ShopByCategory = () => {
                                             <p className='flex text-xl items-center pt-2'>Rating : {toy?.rating} <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={toy?.rating} readOnly /></span></p>
 
                                             <div className="card-actions justify-end">
-                                                <div className="badge badge-outline">Fashion</div>
-                                                <div className="badge badge-outline">Products</div>
+                                                <Link to={`/details/${toy?._id}`} className="badge badge-outline ">Details Now</Link>
+
                                             </div>
                                         </div>
                                     </div>

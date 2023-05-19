@@ -30,7 +30,7 @@ const ToyDetails = () => {
                         <p className='flex text-xl items-center pt-4'>Rating : {details?.rating} <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={details?.rating} readOnly /></span></p>
                         <p className="pt-5 text-xl ">Available Quantity: {details?.quantity}</p>
                         <p className="pt-5 text-xl mb-10 ">Description: {details?.description}</p>
-                        <Link to='/allToys' className='px-8 py-3  text-white font-bold  bg-pink-500 border-none'>Back</Link>
+                        <Link to='/' className='px-8 py-3  text-white font-bold  bg-pink-500 border-none'>Back to Home</Link>
 
                     </div>
                 </div>
