@@ -76,9 +76,9 @@ const AddToy = () => {
                 </div>
                 <div className='mb-2'>
                     <select placeholder='Sub Category' className="block w-full px-4 py-2 mt-2 text-pink-700 bg-white border rounded-md focus:border-pink-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40" {...register("subCategory")}>
-                        <option value="mathToys">Math Toys</option>
-                        <option value="engineeringToys">Engineering Toys</option>
-                        <option value="physicsToys">Physics Toys</option>
+                        <option value="Mathematics Toys">Mathematics Toys</option>
+                        <option value="Engineering Toys">Engineering Toys</option>
+                        <option value="Science Toys">Science Toys</option>
                     </select>
                 </div>
                 <div className="mb-2">
@@ -122,26 +122,7 @@ const AddToy = () => {
                 <button type='submit' className='btn btn-block bg-pink-700 border-none hover:bg-pink-800'> Add New</button>
 
             </form>
-            {/* <form onSubmit={handleSubmit(onSubmit)}>
-                <Controller
-                    name="firstName"
-                    control={control}
-                    render={({ field }) => <Input {...field} />}
-                />
-                <Controller
-                    name="select"
-                    control={control}
-                    render={({ field }) => <Select
-                        {...field}
-                        options={[
-                            { value: "chocolate", label: "Chocolate" },
-                            { value: "strawberry", label: "Strawberry" },
-                            { value: "vanilla", label: "Vanilla" }
-                        ]}
-                    />}
-                />
-                <input type="submit" />
-            </form> */}
+         
         </div>
     );
 };
