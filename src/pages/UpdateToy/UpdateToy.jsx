@@ -60,6 +60,7 @@ const UpdateToy = () => {
                         className="block w-full px-4 py-2 mt-2 text-pink-700 bg-white border rounded-md focus:border-pink-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                     />
                 </div>
+              
                 <div className="mb-2">
                     <label htmlFor="" className='pl-5'>Details Description</label>
                     <input

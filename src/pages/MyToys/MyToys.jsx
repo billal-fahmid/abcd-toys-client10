@@ -11,12 +11,17 @@ const MyToys = () => {
     
     const [myToys, setMyToys] = useState([])
     const [control, setControl] = useState(false)
+    const [sort , setSort] = useState('all')
+
+    console.log(sort)
+    const uri =`http://localhost:5000/myToys?email=${user.email}&price=${sort}`
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user.email}`)
+        // fetch(`http://localhost:5000/myToys?email=${user.email}&price=`)
+        fetch(uri)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [control])
+    }, [control , sort])
 
     const handleDelete = (_id) => {
 
@@ -61,6 +66,11 @@ const MyToys = () => {
                 <h3 className='text-3xl font-bold pb-4'>Your Toys</h3>
 
             </div>
+            <select onChange={(e) => setSort(e.target.value)} id="">
+                <option value="all">All</option>
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
+            </select>
             <table className="table w-full">
                 {/* head */}
                 <thead>
