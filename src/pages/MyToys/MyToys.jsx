@@ -2,11 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 // CommonJS
 
 
 const MyToys = () => {
+
+    useTitle('ABCD TOYS | MY TOYS')
+
     const { user } = useContext(AuthContext)
     
     const [myToys, setMyToys] = useState([])

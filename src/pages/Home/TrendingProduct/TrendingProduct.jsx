@@ -27,6 +27,7 @@ const TrendingProduct = () => {
                 {
                     trendingToys?.map(toy => (
                         <div
+                          
                             class="block rounded-lg w-full  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                             <div
                                 class="relative overflow-hidden bg-cover bg-no-repeat"
@@ -42,7 +43,7 @@ const TrendingProduct = () => {
                                 </a>
                             </div>
                             <div class="p-6">
-                            <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={5} readOnly /></span>
+                                <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={5} readOnly /></span>
 
                                 <h5
                                     class="mb-2 mt-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
@@ -52,7 +53,7 @@ const TrendingProduct = () => {
                                     class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                                     {toy?.price} $
                                 </h5>
-                               
+
                                 <button className='px-8 py-1 rounded-3xl text-white font-bold  bg-pink-500 border-none mt-4'>Buy Now</button>
                             </div>
                         </div>

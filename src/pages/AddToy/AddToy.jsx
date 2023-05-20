@@ -3,8 +3,12 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from '../../provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const AddToy = () => {
+
+    useTitle('ABCD TOYS | ADD TOY')
+
     const { user } = useContext(AuthContext)
 
     const { register, handleSubmit } = useForm();

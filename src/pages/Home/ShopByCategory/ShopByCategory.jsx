@@ -40,7 +40,9 @@ const ShopByCategory = () => {
                         <div className='grid md:grid-cols-2 justify-center gap-10 mt-10'>
                             {
                                 toysCategories?.map(toy => (
-                                    <div className="card h-96 w-full bg-base-100 shadow-xl">
+                                    <div
+                                      
+                                    className="card h-96 w-full bg-base-100 shadow-xl">
                                         <figure><img className='pt-5 object-contain h-full' src={toy.photoURL} alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title mb-2">

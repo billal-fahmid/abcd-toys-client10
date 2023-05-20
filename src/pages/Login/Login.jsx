@@ -2,8 +2,12 @@ import React, { useContext } from 'react';
 import SocialLogin from '../../Shared/SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
+
+    useTitle('ABCD TOYS | LOGIN')
+
     const {loginUser} = useContext(AuthContext)
 
     const location = useLocation();

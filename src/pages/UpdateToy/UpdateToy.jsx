@@ -3,8 +3,12 @@ import { useLoaderData } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateToy = () => {
+
+    useTitle('ABCD TOYS | UPDATE TOY')
+
     const toyData = useLoaderData()
     console.log(toyData)
 

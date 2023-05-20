@@ -3,8 +3,12 @@ import SocialLogin from '../../Shared/SocialLogin';
 import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+
+    useTitle('ABCD TOYS | REGISTER')
+
     const { createUser } = useContext(AuthContext);
 
     const handleSignIn = (e) => {

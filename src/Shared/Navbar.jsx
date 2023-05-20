@@ -32,7 +32,7 @@ const Navbar = () => {
     </>
     return (
         <div className='px-14'>
-            <div className="navbar py-5 bg-base-100">
+            <div className="navbar py-5 bg-base-100 flex flex-col sm:flex-row">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
