@@ -6,7 +6,7 @@ const TrendingProduct = () => {
     const [trendingToys, setTrendingToys] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/trendingToys`)
+        fetch(`https://toy-marketplace-assignment-11-server.vercel.app/trendingToys`)
             .then(res => res.json())
             .then(data => setTrendingToys(data))
     }, [])

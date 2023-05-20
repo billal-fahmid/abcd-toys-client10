@@ -7,7 +7,7 @@ const CustomerReview = () => {
     const [reviews, setReview] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/customerReview`)
+        fetch(`https://toy-marketplace-assignment-11-server.vercel.app/customerReview`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])

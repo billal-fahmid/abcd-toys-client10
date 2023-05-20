@@ -18,10 +18,10 @@ const MyToys = () => {
     const [sort , setSort] = useState('all')
 
     console.log(sort)
-    const uri =`http://localhost:5000/myToys?email=${user.email}&price=${sort}`
+    const uri =`https://toy-marketplace-assignment-11-server.vercel.app/myToys?email=${user.email}&price=${sort}`
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/myToys?email=${user.email}&price=`)
+        // fetch(`https://toy-marketplace-assignment-11-server.vercel.app/myToys?email=${user.email}&price=`)
         fetch(uri)
             .then(res => res.json())
             .then(data => setMyToys(data))
@@ -41,7 +41,7 @@ const MyToys = () => {
             if (result.isConfirmed) {
                 Swal.fire(
 
-                    fetch(`http://localhost:5000/deleteToys/${_id}`, {
+                    fetch(`https://toy-marketplace-assignment-11-server.vercel.app/deleteToys/${_id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

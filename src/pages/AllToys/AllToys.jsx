@@ -9,7 +9,7 @@ const AllToys = () => {
     useTitle('ABCD TOYS | ALL TOYS')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys`)
+        fetch(`https://toy-marketplace-assignment-11-server.vercel.app/allToys`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
@@ -19,7 +19,7 @@ const AllToys = () => {
         const form = e.target;
         const searchText = form.search.value;
         console.log(searchText)
-        fetch(`http://localhost:5000/allToys/${searchText}`)
+        fetch(`https://toy-marketplace-assignment-11-server.vercel.app/allToys/${searchText}`)
         .then(res => res.json())
         .then(data => {
             setToys(data)
