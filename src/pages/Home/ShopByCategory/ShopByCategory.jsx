@@ -4,11 +4,17 @@ import 'react-tabs/style/react-tabs.css';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ShopByCategory = () => {
 
     const [category, setCategory] = useState('Engineering Toys')
     const [toysCategories, setToysCategories] = useState([])
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // Initialize AOS with options (optional)
+        AOS.refresh(); // Refresh AOS when new elements are added dynamically (optional)
+      }, []);
 
     useEffect(() => {
         fetch(`https://toy-marketplace-assignment-11-server.vercel.app/categories/${category}`)
@@ -41,7 +47,7 @@ const ShopByCategory = () => {
                             {
                                 toysCategories?.map(toy => (
                                     <div
-                                      
+                                    data-aos="flip-left"
                                     className="card h-96 w-full bg-base-100 shadow-xl">
                                         <figure><img className='pt-5 object-contain h-full' src={toy.photoURL} alt="Shoes" /></figure>
                                         <div className="card-body">
@@ -66,7 +72,9 @@ const ShopByCategory = () => {
                         <div className='grid md:grid-cols-2 justify-center gap-10 mt-10'>
                             {
                                 toysCategories?.map(toy => (
-                                    <div className="card h-96 w-full bg-base-100 shadow-xl">
+                                    <div 
+                                    data-aos="flip-up"
+                                    className="card h-96 w-full bg-base-100 shadow-xl">
                                         <figure><img className='pt-5 object-contain h-full' src={toy.photoURL} alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title mb-2">
@@ -90,7 +98,9 @@ const ShopByCategory = () => {
                         <div className='grid md:grid-cols-2 justify-center gap-10 mt-10'>
                             {
                                 toysCategories?.map(toy => (
-                                    <div className="card h-96 w-full bg-base-100 shadow-xl">
+                                    <div
+                                    data-aos="flip-right" 
+                                     className="card h-96 w-full bg-base-100 shadow-xl">
                                         <figure><img className='pt-5 object-contain h-full' src={toy.photoURL} alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title mb-2">

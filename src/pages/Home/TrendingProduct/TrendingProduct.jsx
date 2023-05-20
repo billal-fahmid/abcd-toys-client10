@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const TrendingProduct = () => {
     const [trendingToys, setTrendingToys] = useState([])
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // Initialize AOS with options (optional)
+        AOS.refresh(); // Refresh AOS when new elements are added dynamically (optional)
+    }, []);
 
     useEffect(() => {
         fetch(`https://toy-marketplace-assignment-11-server.vercel.app/trendingToys`)
@@ -27,7 +34,7 @@ const TrendingProduct = () => {
                 {
                     trendingToys?.map(toy => (
                         <div
-                          
+                            data-aos="zoom-in"
                             class="block rounded-lg w-full  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                             <div
                                 class="relative overflow-hidden bg-cover bg-no-repeat"
