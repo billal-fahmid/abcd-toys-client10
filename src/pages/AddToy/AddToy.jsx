@@ -12,7 +12,7 @@ const AddToy = () => {
     const { user } = useContext(AuthContext)
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
+    const onSubmit = (data,e) => {
         console.log(data)
         fetch(`https://toy-marketplace-assignment-11-server.vercel.app/addToy`, {
             method: 'POST',
@@ -26,8 +26,10 @@ const AddToy = () => {
                 // console.log(data)
                 if(data.acknowledged){
                     toast("Toy Added Successfully")
+                    e.target.reset()
                 }
             })
+          
     };
 
     return (
@@ -123,7 +125,7 @@ const AddToy = () => {
                 </div>
 
                 {/* <input  type="submit "   /> */}
-                <button type='submit' className='btn btn-block bg-pink-700 border-none hover:bg-pink-800'> Add New</button>
+                <button type='submit'  className='btn btn-block bg-pink-700 border-none hover:bg-pink-800'> Add New</button>
 
             </form>
          

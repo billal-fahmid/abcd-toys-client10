@@ -28,7 +28,8 @@ const Register = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 form.reset()
-
+                loggedUser.displayName= name;
+                loggedUser.photoURL = photoURL;
                 updateProfile(loggedUser, {
                     displayName: name, photoURL: photoURL
                 }).then(() => {
