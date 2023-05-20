@@ -35,9 +35,9 @@ const ShopByCategory = () => {
             <div className='text-center'>
 
                 <Tabs>
-
+                {/* className={`${category}` === 'Engineering Toys'?  'bg-pink-700 text-white' : ''} */}
                     <TabList>
-                        <Tab onClick={() => setCategory('Engineering Toys')}>Engineering Toys</Tab>
+                        <Tab  onClick={() => setCategory('Engineering Toys')}>Engineering Toys</Tab>
                         <Tab onClick={() => setCategory('Mathematics Toys')}>Mathematics Toys</Tab>
                         <Tab onClick={() => setCategory('Science Toys')}> Science Toys</Tab>
                     </TabList>

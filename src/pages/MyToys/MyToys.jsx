@@ -12,20 +12,20 @@ const MyToys = () => {
     useTitle('ABCD TOYS | MY TOYS')
 
     const { user } = useContext(AuthContext)
-    
+
     const [myToys, setMyToys] = useState([])
     const [control, setControl] = useState(false)
-    const [sort , setSort] = useState('all')
+    const [sort, setSort] = useState('all')
 
     console.log(sort)
-    const uri =`https://toy-marketplace-assignment-11-server.vercel.app/myToys?email=${user.email}&price=${sort}`
+    const uri = `https://toy-marketplace-assignment-11-server.vercel.app/myToys?email=${user.email}&price=${sort}`
 
     useEffect(() => {
         // fetch(`https://toy-marketplace-assignment-11-server.vercel.app/myToys?email=${user.email}&price=`)
         fetch(uri)
             .then(res => res.json())
             .then(data => setMyToys(data))
-    }, [control , sort])
+    }, [control, sort])
 
     const handleDelete = (_id) => {
 
@@ -70,11 +70,15 @@ const MyToys = () => {
                 <h3 className='text-3xl font-bold pb-4'>Your Toys</h3>
 
             </div>
-            <select onChange={(e) => setSort(e.target.value)} id="">
-                <option value="all">All</option>
-                <option value="ascending">Ascending</option>
-                <option value="descending">Descending</option>
-            </select>
+            <div className="relative w-full lg:max-w-sm mb-10">
+                <h4 className='text-base font-bold text-pink-600 mb-4'>Ascending - Descending By Price</h4>
+                <select className="w-full p-2.5 text-pink-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-pink-600" onChange={(e) => setSort(e.target.value)} id="">
+                    <option value="all">All</option>
+                    <option value="ascending">Ascending</option>
+                    <option value="descending">Descending</option>
+                </select>
+            </div>
+
             <table className="table w-full">
                 {/* head */}
                 <thead>
