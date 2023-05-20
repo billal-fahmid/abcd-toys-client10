@@ -12,6 +12,7 @@ const AddToy = () => {
     const { user } = useContext(AuthContext)
 
     const { register, handleSubmit } = useForm();
+    
     const onSubmit = (data,e) => {
         console.log(data)
         fetch(`https://toy-marketplace-assignment-11-server.vercel.app/addToy`, {

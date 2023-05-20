@@ -13,7 +13,8 @@ const UpdateToy = () => {
     console.log(toyData)
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => {
+
+    const onSubmit = (data,e) => {
         console.log(data)
         fetch(`https://toy-marketplace-assignment-11-server.vercel.app/update/${toyData?._id}` ,{
             method:'PUT',
@@ -26,14 +27,16 @@ const UpdateToy = () => {
         .then(data => {
             // console.log(data)
             if(data.modifiedCount > 0){
+            
                 toast("Update Toy Info Successfully")
+               
             }
         })
       
     };
 
     return (
-        <div className='w-full p-16 bg-pink-100'>
+        <div className='w-full p-16 bg-pink-100 min-h-screen'>
             <ToastContainer />
              <div className='text-center'>
                 <h3 className='text-3xl font-bold pb-4'>Update Toy Info</h3>
