@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Rating } from '@smastrom/react-rating'
@@ -6,9 +6,12 @@ import '@smastrom/react-rating/style.css'
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { AuthContext } from '../../../provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const ShopByCategory = () => {
 
+    const {user} = useContext(AuthContext)
     const [category, setCategory] = useState('Engineering Toys')
     const [toysCategories, setToysCategories] = useState([])
     useEffect(() => {
@@ -24,6 +27,14 @@ const ShopByCategory = () => {
             })
     }, [category])
     console.log(toysCategories)
+
+    const handleLoginMessage =()=>{
+        if(!user){
+            Swal.fire('“You have to log in first to view details”')
+        }
+    }
+
+
 
     return (
         <div className='py-24 px-14 bg-purple-200'>
@@ -60,7 +71,7 @@ const ShopByCategory = () => {
                                             <p className='flex text-xl items-center pt-2'>Rating : {toy?.rating} <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={toy?.rating} readOnly /></span></p>
 
                                             <div className="card-actions justify-end">
-                                                <Link to={`/details/${toy?._id}`} className="badge badge-outline ">Details Now</Link>
+                                                <Link to={`/details/${toy?._id}`} onClick={handleLoginMessage} className="badge badge-outline ">Details Now</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +97,7 @@ const ShopByCategory = () => {
                                             <p className='flex text-xl items-center pt-2'>Rating : {toy?.rating} <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={toy?.rating} readOnly /></span></p>
 
                                             <div className="card-actions justify-end">
-                                                <Link to={`/details/${toy?._id}`} className="badge badge-outline ">Details Now</Link>
+                                                <Link to={`/details/${toy?._id}`} onClick={handleLoginMessage} className="badge badge-outline ">Details Now</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +123,7 @@ const ShopByCategory = () => {
                                             <p className='flex text-xl items-center pt-2'>Rating : {toy?.rating} <span className='ml-5 '><Rating style={{ maxWidth: 100 }} value={toy?.rating} readOnly /></span></p>
 
                                             <div className="card-actions justify-end">
-                                                <Link to={`/details/${toy?._id}`} className="badge badge-outline ">Details Now</Link>
+                                                <Link to={`/details/${toy?._id}`} onClick={handleLoginMessage} className="badge badge-outline ">Details Now</Link>
 
                                             </div>
                                         </div>

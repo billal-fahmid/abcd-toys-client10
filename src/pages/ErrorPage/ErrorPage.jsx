@@ -14,7 +14,7 @@ const ErrorPage = () => {
                             <h1 className="font-bold text-blue-600 text-9xl">404</h1>
                             <p className="mb-2 text-2xl font-bold text-center text-gray-800 md:text-3xl">
                                 <span className="text-red-500">Oops!</span> Page{" "}
-                                {error?.statusText}
+                                {/* {error?.statusText} */}
                             </p>
                             <p className="mb-8 text-center text-gray-500 md:text-lg">
                                 {error? error.data :'The page you’re looking for doesn’t exist.'}

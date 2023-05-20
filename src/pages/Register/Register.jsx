@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import SocialLogin from '../../Shared/SocialLogin';
 import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
@@ -10,10 +10,13 @@ const Register = () => {
     useTitle('ABCD TOYS | REGISTER')
 
     const { createUser } = useContext(AuthContext);
+    const [error , setError] = useState('')
+    const [success, setSuccess] = useState('')
 
     const handleSignIn = (e) => {
         e.preventDefault()
-
+        setError('')
+        setSuccess('')
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -30,20 +33,23 @@ const Register = () => {
                 form.reset()
                 loggedUser.displayName= name;
                 loggedUser.photoURL = photoURL;
+                setSuccess('Registration Successful')
                 updateProfile(loggedUser, {
                     displayName: name, photoURL: photoURL
                 }).then(() => {
                 
                     // Profile updated!
                     // ...
-                }).catch((error) => {
+                }).catch((err) => {
                     // An error occurred
                     // ...
+                    setError(err.message)
                 });
 
             })
             .catch(err => {
-                console.log(err)
+                console.log(err.message)
+                setError(err.message)
             })
     }
     return (
@@ -70,6 +76,7 @@ const Register = () => {
                                     <input
                                         type="text"
                                         name="name"
+                                        required
                                         className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     />
                                 </div>
@@ -77,6 +84,7 @@ const Register = () => {
                             <div className="mt-4">
                                 <label
                                     htmlFor="email"
+                                    
                                     className="block text-sm font-medium text-gray-700 undefined"
                                 >
                                     Email
@@ -85,6 +93,7 @@ const Register = () => {
                                     <input
                                         type="email"
                                         name="email"
+                                        required
                                         className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     />
                                 </div>
@@ -100,6 +109,7 @@ const Register = () => {
                                     <input
                                         type="text"
                                         name="photoURL"
+                                        required
                                         className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     />
                                 </div>
@@ -114,6 +124,7 @@ const Register = () => {
                                 <div className="flex flex-col items-start">
                                     <input
                                         type="password"
+                                        required
                                         name="password"
                                         className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                                     />
@@ -126,6 +137,8 @@ const Register = () => {
 
                             </div>
                         </form>
+                        <p className='text-orange-500 text-xl font-semibold'>{error }</p>
+                        <p className='text-green-500 text-xl font-semibold'>{success}</p>
                         <div className="mt-4 text-grey-600">
                             Already have an account?{" "}
                             <span>
