@@ -3,6 +3,8 @@ import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // CommonJS
 
@@ -50,6 +52,7 @@ const MyToys = () => {
                             if (data.deletedCount > 0) {
 
                                 setControl(!control)
+                                toast("Toy Delete Successfully")
                                 'Deleted!',
                                     'Your file has been deleted.',
                                     'success'
@@ -65,6 +68,7 @@ const MyToys = () => {
 
     return (
         <div className='py-24 px-14'>
+            <ToastContainer />
 
             <div className='text-center'>
                 <h3 className='text-3xl font-bold pb-4'>Your Toys</h3>
