@@ -26,7 +26,7 @@ const ShopByCategory = () => {
                 setToysCategories(data)
             })
     }, [category])
-    console.log(toysCategories)
+    // console.log(toysCategories)
 
     const handleLoginMessage =()=>{
         if(!user){

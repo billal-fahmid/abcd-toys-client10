@@ -18,7 +18,7 @@ const CustomerReview = () => {
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])
-    console.log(reviews)
+    // console.log(reviews)
 
     return (
         <div className='py-24 px-14'>

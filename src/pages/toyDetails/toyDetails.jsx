@@ -11,7 +11,7 @@ const ToyDetails = () => {
     useTitle('ABCD TOYS | TOY DETAILS')
 
     const details = useLoaderData()
-    console.log(details)
+    // console.log(details)
     return (
         <div className='py-24 px-14'>
       

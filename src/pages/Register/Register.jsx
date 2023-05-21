@@ -23,7 +23,7 @@ const Register = () => {
         const email = form.email.value;
         const photoURL = form.photoURL.value;
         const password = form.password.value;
-        console.log(name, email, photoURL, password)
+        // console.log(name, email, photoURL, password)
 
         if(!email){
             return setError('Please Provide a valid Email')

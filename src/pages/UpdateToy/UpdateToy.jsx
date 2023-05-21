@@ -15,7 +15,7 @@ const UpdateToy = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data,e) => {
-        console.log(data)
+        // console.log(data)
         fetch(`https://toy-marketplace-assignment-11-server.vercel.app/update/${toyData?._id}` ,{
             method:'PUT',
             headers:{

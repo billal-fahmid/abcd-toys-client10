@@ -17,7 +17,7 @@ const MyToys = () => {
     const [control, setControl] = useState(false)
     const [sort, setSort] = useState('all')
 
-    console.log(sort)
+    // console.log(sort)
     const uri = `https://toy-marketplace-assignment-11-server.vercel.app/myToys?email=${user.email}&price=${sort}`
 
     useEffect(() => {
@@ -61,7 +61,7 @@ const MyToys = () => {
         })
     }
 
-    console.log(myToys)
+    // console.log(myToys)
 
     return (
         <div className='py-24 px-14'>
