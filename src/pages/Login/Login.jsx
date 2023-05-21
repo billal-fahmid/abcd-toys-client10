@@ -25,6 +25,12 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+        if(!email){
+            return setError('Please Provide a valid Email')
+        }
+        if(!password|| password.length<6){
+            return setError('Please Provide a password & password must be 6 character long');
+        }
 
         loginUser(email, password)
             .then(result => {

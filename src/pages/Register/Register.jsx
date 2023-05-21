@@ -17,12 +17,20 @@ const Register = () => {
         e.preventDefault()
         setError('')
         setSuccess('')
+
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const photoURL = form.photoURL.value;
         const password = form.password.value;
         console.log(name, email, photoURL, password)
+
+        if(!email){
+            return setError('Please Provide a valid Email')
+        }
+        if(!password|| password.length<6){
+            return setError('Please Provide a password & password must be 6 character long');
+        }
 
         createUser(email, password)
     
