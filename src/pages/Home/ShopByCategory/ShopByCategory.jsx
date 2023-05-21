@@ -37,7 +37,7 @@ const ShopByCategory = () => {
 
 
     return (
-        <div className='py-24 px-14 bg-purple-200'>
+        <div className='py-24 px-14 bg-lime-100'>
             <div className='text-center'>
                 <h3 className='text-3xl font-bold pb-4'>Discover Exciting Toy Categories</h3>
                 <p className=' font-bold pb-8'>

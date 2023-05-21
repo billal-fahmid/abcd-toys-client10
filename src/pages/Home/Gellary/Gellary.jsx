@@ -10,7 +10,7 @@ const Gellary = () => {
       }, []);
   
     return (
-        <div className='py-20 px-14 bg-pink-100'>
+        <div className='py-20 px-14 bg-gray-100'>
             <div className='text-center ' data-aos="zoom-in">
                 <h3 className='text-3xl font-bold pb-4'>Explore Our Playful Gallery</h3>
                 <p className=' font-bold pb-8'>Spark Their Curiosity, Ignite Their Learning!</p>
