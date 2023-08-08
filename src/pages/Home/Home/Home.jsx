@@ -5,6 +5,7 @@ import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import CustomerReview from '../CustomerReview/CustomerReview';
 import TrendingProduct from '../TrendingProduct/TrendingProduct';
 import useTitle from '../../../hooks/useTitle';
+import HowWorks from '../HowWorks/HowWorks';
 
 const Home = () => {
     useTitle('ABCD TOYS | HOME')
@@ -12,6 +13,7 @@ const Home = () => {
         <div className=''>
             <Banner></Banner>
             <Gellary></Gellary>
+            <HowWorks></HowWorks>
             <ShopByCategory></ShopByCategory>
             <TrendingProduct></TrendingProduct>
             <CustomerReview></CustomerReview>
