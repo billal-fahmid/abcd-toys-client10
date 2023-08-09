@@ -1,8 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+import './styles.css';
+
+// import required modules
+import { FreeMode, Pagination } from 'swiper/modules';
 
 const CustomerReview = () => {
 
@@ -21,7 +33,7 @@ const CustomerReview = () => {
     // console.log(reviews)
 
     return (
-        <div className='py-24 px-14'>
+        <div className='py-24 px-14 '>
             <div className='w-full mb-10'>
                 <div className='text-center mx-auto lg:w-3/4'>
                     <h3 className='text-3xl font-bold pb-4'> Hear What Our Customers Say</h3>
@@ -32,11 +44,23 @@ const CustomerReview = () => {
 
 
 
-            <div className="grid gap-6 text-center md:grid-cols-3 lg:gap-12">
+            <div className="" id=''>
 
-                {reviews?.map(review => (
+            
+
+                <Swiper
+                     slidesPerView={3}
+                     spaceBetween={30}
+                     freeMode={true}
+                     pagination={{
+                       clickable: true,
+                     }}
+                     modules={[FreeMode, Pagination]}
+                     className="mySwiper"
+                >
+                        {reviews?.map(review => (<SwiperSlide>
                     <div
-                        data-aos="flip-up"
+                        // data-aos="flip-up"
                         className="mb-12 md:mb-0">
                         <div className="mb-6 flex justify-center">
                             <img
@@ -75,9 +99,12 @@ const CustomerReview = () => {
 
                         </ul>
                     </div>
-                ))}
-
-
+                    </SwiperSlide>
+                ))} 
+                   
+                   
+                    
+                </Swiper>
 
                 {/* <div className="mb-12 md:mb-0">
                     <div className="mb-6 flex justify-center">
