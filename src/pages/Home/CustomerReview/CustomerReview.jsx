@@ -58,9 +58,10 @@ const CustomerReview = () => {
                      modules={[FreeMode, Pagination]}
                      className="mySwiper"
                 >
+
                         {reviews?.map(review => (<SwiperSlide>
                     <div
-                        // data-aos="flip-up"
+                        data-aos="flip-up"
                         className="mb-12 md:mb-0">
                         <div className="mb-6 flex justify-center">
                             <img
@@ -99,9 +100,12 @@ const CustomerReview = () => {
 
                         </ul>
                     </div>
+
                     </SwiperSlide>
-                ))} 
                    
+                ))} 
+                     <SwiperSlide> Add more </SwiperSlide>
+                    
                    
                     
                 </Swiper>

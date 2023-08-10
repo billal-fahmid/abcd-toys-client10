@@ -60,7 +60,7 @@ const Offer = () => {
 
     return (
 
-        <div className='pt-24 pb-20 h-screen bg-cover bg-center ' style={{backgroundImage:`linear-gradient(to right, #febe009b,#febe009b), url(https://i.ibb.co/KDqzrxm/paint-pencils-back-school-concept.jpg)`}}>
+        <div className='pt-24 pb-20 lg:h-screen bg-cover bg-center ' style={{backgroundImage:`linear-gradient(to right, #febe009b,#febe009b), url(https://i.ibb.co/KDqzrxm/paint-pencils-back-school-concept.jpg)`}}>
        
 
             <div className='text-center mx-auto lg:w-3/4'>
@@ -69,23 +69,23 @@ const Offer = () => {
                     On All Kid's Education Toys
                 </p>
                 <p className='text-2xl '>Offer Expires on</p>
-                <div className='flex justify-center gap-10 mt-10 text-white '>
-                    <section className='bg-pink-600 py-4 px-10 rounded-lg'>
+                <div className='flex justify-center md:flex-row flex-col gap-10 mt-10 text-white '>
+                    <section className='bg-[#ff4f3b] py-4 px-10 rounded-lg'>
                         <p className='text-5xl font-semibold'>{timerDays}</p>
                         <p className='text-2xl'><small>Days</small></p>
                     
                     </section>
-                    <section className='bg-pink-600 py-4 px-10 rounded-lg'>
+                    <section className='bg-[#ff4f3b] py-4 px-10 rounded-lg'>
                         <p className='text-5xl font-semibold'>{timerHours}</p>
                         <p className='text-2xl'><small>Hrs</small></p>
                     
                     </section>
-                    <section className='bg-pink-600 py-4 px-10 rounded-lg'>
+                    <section className='bg-[#ff4f3b] py-4 px-10 rounded-lg'>
                         <p className='text-5xl font-semibold'>{timerMinutes}</p>
                         <p className='text-2xl'><small>Mins</small></p>
                     
                     </section>
-                    <section className='bg-pink-600 py-4 px-10 rounded-lg'>
+                    <section className='bg-[#ff4f3b] py-4 px-10 rounded-lg'>
                         <p className='text-5xl font-semibold'>{timerSec}</p>
                         <p className='text-2xl'><small>Secs</small></p>
                     

@@ -8,7 +8,7 @@ const HowWorks = () => {
         AOS.refresh(); // Refresh AOS when new elements are added dynamically (optional)
       }, []);
     return (
-        <div className=' py-24 px-14 bg-white'>
+        <div className=' py-24 px-14 lg:h-screen bg-white'>
             <div className='text-center ' data-aos="zoom-in">
                 <h3 className='text-3xl font-bold pb-4'>Here's how it works</h3>
                 <p className=' font-bold pb-8'>Unlocking Learning Through Play</p>

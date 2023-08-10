@@ -1,0 +1,42 @@
+[
+    {
+      "img": "https://i.ibb.co/b7v3GpV/3.webp",
+      "blogTitle": "Introduction to JavaScript Programming: Basics, Concepts, and Key Features",
+      "date": "August 10, 2023",
+      "authorName": "John Doe"
+    },
+    {
+      "img": "https://i.ibb.co/54XXZpX/2-1.webp",
+      "blogTitle": "Exploring React Framework: In-Depth Study of Components, State, and Props",
+      "date": "July 22, 2023",
+      "authorName": "Jane Smith"
+    },
+    {
+      "img": "https://i.ibb.co/Q9FqXQy/1.webp",
+      "blogTitle": "Mastering Node.js: Building Server-Side Applications with Advanced Techniques",
+      "date": "June 15, 2023",
+      "authorName": "Alex Johnson"
+    },
+    {
+      "img": "https://example.com/image4.jpg",
+      "blogTitle": "CSS Tricks and Techniques",
+      "date": "May 2, 2023",
+      "authorName": "Emily Brown"
+    },
+    {
+      "img": "https://example.com/image5.jpg",
+      "blogTitle": "Python for Data Science",
+      "date": "April 12, 2023",
+      "authorName": "Michael Lee"
+    },
+    {
+      "img": "https://example.com/image6.jpg",
+      "blogTitle": "Getting Started with Vue.js",
+      "date": "March 18, 2023",
+      "authorName": "Sarah Williams"
+    }
+  ]
+  
+
+
+  
