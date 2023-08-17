@@ -8,7 +8,7 @@ const SafePoint = ({img, title}) => {
         AOS.refresh(); // Refresh AOS when new elements are added dynamically (optional)
       }, []);
     return (
-        <div data-aos="fade-left" className='flex justify-start gap-8 items-center'>
+        <div data-aos="fade-right" className='flex justify-start gap-8 items-center'>
             <img src={img} alt="" />
             <p className='text-xl'>{title}</p>
         

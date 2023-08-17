@@ -126,7 +126,7 @@ const Footer = () => {
         <footer className="bg-blue-900 text-white py-10 md:py-20">
             <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-20 flex flex-col md:flex-row justify-between">
 
-                <div className="flex items-center mb-6 md:mb-0">
+                <div className="flex justify-center  md:justify-start mb-6 md:mb-0">
                     <img
                         src="https://i.ibb.co/gM1DMCv/cubes.png"
                         alt="Logo"
@@ -153,7 +153,7 @@ const Footer = () => {
                 </div>
 
                 <div className='flex flex-col md:flex-row justify-between gap-5'>
-                    <div className="text-center md:text-left mb-6 md:mb-0">
+                    <div className=" text-left mx-auto mb-6 md:mb-0">
                         <h2 className="text-lg font-semibold mb-2">Contact Us</h2>
                         <p>Email: info@adcdtoys.com</p>
                         <p>Phone: +1 123-456-7890</p>
@@ -177,7 +177,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="text-center md:text-left mb-6 md:mb-0">
+                    <div className="text-left mx-auto mb-6 md:mb-0">
                         <h2 className="text-lg font-semibold mb-2">Our Services</h2>
                         <ul className="list-disc list-inside">
                             <li>Educational Toys for Kids</li>
