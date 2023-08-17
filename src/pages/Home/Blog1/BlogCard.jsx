@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const BlogCard = ({ blog }) => {
-    const [hover, setHover] = useState(false)
+    const [hover, setHover] = useState(true)
 
     return (
         <div className=' overflow-hidden ' onMouseLeave={() => setHover(!hover)} onMouseEnter={() => setHover(!hover)}>

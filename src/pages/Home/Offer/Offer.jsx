@@ -63,7 +63,7 @@ const Offer = () => {
         <div className='pt-24 pb-20 lg:h-screen bg-cover bg-center ' style={{backgroundImage:`linear-gradient(to right, #febe009b,#febe009b), url(https://i.ibb.co/KDqzrxm/paint-pencils-back-school-concept.jpg)`}}>
        
 
-            <div className='text-center mx-auto lg:w-3/4'>
+            <div className='text-center mx-auto lg:w-3/4 px-6 sm:px-0'>
                 <h3 className='text-5xl font-bold pb-4'> 15% Discount</h3>
                 <p className='text-5xl  font-bold pb-8'>
                     On All Kid's Education Toys

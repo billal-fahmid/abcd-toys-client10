@@ -12,7 +12,7 @@ const Banner = () => {
                     <h2 className='text-5xl font-bold mt-24 mb-10 '>Play, Learn, Grow: Explore our  ABCD Toys Todays</h2>
 
                     <p className='text-xl font-bold pb-8'>Give The Gift Of Your Children Everyday</p>
-                    <button className='px-8 py-3 rounded-3xl text-white font-bold  bg-pink-500 border-none'>Explore Now</button>
+                    <button className='text-black py-2 px-6 mb-5 bg-yellow-500 text-[16px] mt-6 hover:bg-black hover:text-white transition-all font-bold rounded-full'>Explore Now</button>
                 </div>
 
                 <div data-aos="fade-down" className='w-full md:w-1/2 mt-10 md:mt-0'>

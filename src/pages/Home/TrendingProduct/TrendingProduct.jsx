@@ -61,7 +61,7 @@ const TrendingProduct = () => {
                                     {toy?.price} $
                                 </h5>
 
-                                <button className='px-8 py-1 rounded-3xl text-white font-bold  bg-pink-500 border-none mt-4'>Buy Now</button>
+                                <button className='text-black py-2 px-6 mb-5 bg-yellow-500 text-[16px] mt-6 hover:bg-black hover:text-white transition-all font-bold rounded-full'>Buy Now</button>
                             </div>
                         </div>
                     ))

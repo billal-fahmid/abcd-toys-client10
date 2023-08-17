@@ -43,10 +43,8 @@ const CustomerReview = () => {
             </div>
 
 
-
-            <div className="" id=''>
-
-            
+            {/* 
+           <div className="" id=''>
 
                 <Swiper
                      slidesPerView={3}
@@ -181,7 +179,51 @@ const CustomerReview = () => {
                 </div> */}
 
 
+            {/* </div> */}
+            <div className="px-4 md:px-8 lg:px-16 xl:px-20" id="">
+
+                <Swiper
+                    slidesPerView={1}
+                    spaceBetween={10}
+                    freeMode={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[FreeMode, Pagination]}
+                    className="mySwiper"
+                >
+
+                    {reviews?.map((review, index) => (
+                        <SwiperSlide key={index}>
+                            <div
+                                data-aos="flip-up"
+                                className="mb-6 md:mb-0"
+                            >
+                                <div className="mb-3 flex justify-center">
+                                    <img
+                                        src={review?.img}
+                                        alt={`Review by ${review?.name}`}
+                                        className="w-24 h-24 md:w-32 md:h-32 rounded-full shadow-lg dark:shadow-black/30"
+                                    />
+                                </div>
+                                <h5 className="mb-2 text-lg md:text-xl font-semibold">{review?.name}</h5>
+                                <h6 className="mb-2 font-semibold text-pink-500 dark:text-primary-500">
+                                    {review?.profession}
+                                </h6>
+                                <p className="mb-2 text-sm md:w-1/2 mx-auto md:text-base">
+                                    {review?.review}
+                                </p>
+                                <div className="flex items-center justify-center mb-2">
+                                    <Rating style={{ maxWidth: 100 }} value={review?.rating} readOnly />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+
+                </Swiper>
+
             </div>
+
         </div>
     );
 };

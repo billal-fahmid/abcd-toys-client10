@@ -20,7 +20,7 @@ const ToyDetails = () => {
 
             </div>
 
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero h-full bg-base-200">
                 <div className="hero-content flex-col lg:flex-row gap-24">
                     <img src={details?.photoURL} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
